@@ -1,5 +1,5 @@
 const { Water, Weight } = require('../models/secondary.models');
-const User = require('../models/User.model');
+const User = require('../models/user.model');
 const { asyncHandler } = require('../utils/asyncHandler');
 const ErrorResponse = require('../utils/errorResponse');
 const { getDailyAnalytics, getDailyTotals } = require('../services/analytics.service');

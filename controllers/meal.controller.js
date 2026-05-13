@@ -1,5 +1,5 @@
-const Meal = require('../models/Meal.model');
-const User = require('../models/User.model');
+const Meal = require('../models/meal.model');
+const User = require('../models/user.model');
 const { asyncHandler } = require('../utils/asyncHandler');
 const ErrorResponse = require('../utils/errorResponse');
 

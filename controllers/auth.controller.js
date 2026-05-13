@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User.model');
+const User = require('../models/user.model');
 const { asyncHandler } = require('../utils/asyncHandler');
 const ErrorResponse = require('../utils/errorResponse');
 const sendToken = require('../utils/sendToken');
