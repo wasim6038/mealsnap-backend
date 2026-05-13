@@ -28,7 +28,7 @@ exports.register = asyncHandler(async (req, res, next) => {
   try {
     const template = emailTemplates.welcome(user.name);
     await sendEmail({ to: user.email, ...template });
-  } catch { /* silent */ }
+  } catch { }
 
   await sendToken(user, 201, res, 'Registration successful');
 });
@@ -89,7 +89,6 @@ exports.refreshToken = asyncHandler(async (req, res, next) => {
 exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email?.toLowerCase() });
   if (!user) {
-    // Return success even if not found (security)
     return res.json({ success: true, message: 'If that email exists, a reset link has been sent.' });
   }
 

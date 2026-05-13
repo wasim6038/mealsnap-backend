@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
  */
 const sendEmail = async ({ to, subject, html }) => {
   const mailOptions = {
-    from: process.env.EMAIL_FROM || 'NutriAI <noreply@nutriai.com>',
+    from: process.env.EMAIL_FROM || 'MealSnap <noreply@mealsnap.com>',
     to,
     subject,
     html,
@@ -30,14 +30,14 @@ const sendEmail = async ({ to, subject, html }) => {
 // ─── Email templates ──────────────────────────────────────────────────────────
 const emailTemplates = {
   welcome: (name) => ({
-    subject: 'Welcome to NutriAI! 🥗',
+    subject: 'Welcome to MealSnap! 🥗',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px">
-        <h1 style="color:#16a34a">Welcome to NutriAI, ${name}!</h1>
+        <h1 style="color:#16a34a">Welcome to MealSnap, ${name}!</h1>
         <p>We're excited to help you on your health journey.</p>
         <p>Start tracking your meals, water intake, and weight to get personalized AI recommendations.</p>
         <a href="${process.env.CLIENT_URL}/dashboard" style="background:#16a34a;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:16px">Go to Dashboard</a>
-        <p style="margin-top:24px;color:#666;font-size:14px">The NutriAI Team</p>
+        <p style="margin-top:24px;color:#666;font-size:14px">The MealSnap Team</p>
       </div>
     `,
   }),
@@ -56,7 +56,7 @@ const emailTemplates = {
   }),
 
   weeklyReport: (name, stats) => ({
-    subject: `Your Weekly NutriAI Report 📊`,
+    subject: `Your Weekly MealSnap Report 📊`,
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px">
         <h1 style="color:#16a34a">Weekly Report for ${name}</h1>
